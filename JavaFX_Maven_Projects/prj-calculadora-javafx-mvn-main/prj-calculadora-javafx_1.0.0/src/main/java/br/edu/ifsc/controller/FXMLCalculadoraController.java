@@ -55,7 +55,8 @@ public class FXMLCalculadoraController implements Initializable {
     private void actionBtSubtrair() {
         tfTotal.setText(Integer.toString(
                 Calculadora.subtrair(
-                        Integer.parseInt(tfValor1.getText()), Integer.parseInt(tfValor2.getText()))));
+                        Integer.parseInt(tfValor1.getText()), 
+                        Integer.parseInt(tfValor2.getText()))));
     }    
 
     
