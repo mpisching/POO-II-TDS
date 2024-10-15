@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.edu.ifsc.fln</groupId>
-    <artifactId>primeiro-javafx</artifactId>
+    <artifactId>projeto-calculo-imc-novo</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -89,4 +89,5 @@
             </plugin>
         </plugins>
     </build>
+    <name>projeto-calculo-imc-novo</name>
 </project>
