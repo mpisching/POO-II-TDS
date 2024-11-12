@@ -111,15 +111,15 @@ public class ProdutoDAO{
         }
         return retorno;
     }
-
-    public Produto buscar(Produto produto) {
+    
+    public Produto buscar(int id) {
         String sql =  "SELECT p.id as produto_id, p.nome as produto_nome, p.descricao as produto_descricao, p.preco as produto_preco, "
                 + "c.id as categoria_id, c.descricao as categoria_descricao "
                 + "FROM produto p INNER JOIN categoria c ON c.id = p.id_categoria WHERE p.id = ?;";
         Produto retorno = new Produto();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, produto.getId());
+            stmt.setInt(1, id);
             ResultSet resultado = stmt.executeQuery();
             if (resultado.next()) {
                 retorno = populateVO(resultado);
@@ -128,6 +128,10 @@ public class ProdutoDAO{
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return retorno;
+    }    
+
+    public Produto buscar(Produto produto) {
+        return buscar(produto.getId());
     }
     
     private Produto populateVO(ResultSet rs) throws SQLException {
