@@ -39,6 +39,7 @@ public class FornecedorDAO {
         try {
             //armazena os dados da superclasse
             PreparedStatement stmt = connection.prepareStatement(sql);
+            connection.setAutoCommit(false);
             stmt.setString(1, fornecedor.getNome());
             stmt.setString(2, fornecedor.getEmail());
             stmt.setString(3, fornecedor.getFone());
@@ -47,6 +48,8 @@ public class FornecedorDAO {
             if (fornecedor instanceof Nacional) {
                 stmt = connection.prepareStatement(sqlFN);
                 stmt.setString(1, ((Nacional)fornecedor).getCnpj());
+                //a linha a seguir está errada e foi proposital para fazer um teste de rollback
+                //stmt.setString(2, ((Nacional)fornecedor).getCnpj());
                 stmt.execute();
             } else {
                 stmt = connection.prepareStatement(sqlFI);
@@ -54,10 +57,25 @@ public class FornecedorDAO {
                 stmt.setString(2, ((Internacional)fornecedor).getPais());
                 stmt.execute();
             }
+            connection.commit();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
+
+            try {
+                connection.rollback();
+                System.out.println("rollback executado com sucesso!!!");
+            } catch (SQLException e) {
+                System.out.println("falha na operação roolback...");
+                throw new RuntimeException(e);
+            }
             return false;
+        } finally {
+            try {
+                connection.setAutoCommit(true);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 

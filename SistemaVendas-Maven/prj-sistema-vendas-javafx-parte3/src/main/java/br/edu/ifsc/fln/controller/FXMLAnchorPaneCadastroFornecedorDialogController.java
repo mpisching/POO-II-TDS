@@ -93,7 +93,7 @@ public class FXMLAnchorPaneCadastroFornecedorDialogController implements Initial
 
     public void setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
-
+        if (fornecedor.getId() != 0) {
             this.tfNome.setText(this.fornecedor.getNome());
             this.tfEmail.setText(this.fornecedor.getEmail());
             this.tfFone.setText(this.fornecedor.getFone());
@@ -109,6 +109,7 @@ public class FXMLAnchorPaneCadastroFornecedorDialogController implements Initial
                 tfPais.setText(((Internacional) this.fornecedor).getPais());
                 tfPais.setDisable(false);
             }
+        }
         this.tfNome.requestFocus();
     }
 
