@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.prjexemplojavafx.HelloController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="237.0" prefWidth="316.0" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+         <AnchorPane prefHeight="200.0" prefWidth="276.0">
+            <children>
+            
+                <Label fx:id="labelResposta" layoutX="9.0" layoutY="126.0" prefHeight="18.0" prefWidth="258.0" text="Welcome....">
+                  <font>
+                     <Font name="System Italic" size="12.0" />
+                  </font>
+               </Label>
+                <Button layoutX="170.0" layoutY="156.0" onAction="#onHelloButtonClick" text="Cancelar">
+                  <font>
+                     <Font name="Calibri Bold" size="14.0" />
+                  </font>
+               </Button>
+               <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="11.0" prefHeight="18.0" prefWidth="64.0" text="Nome:" textAlignment="RIGHT" />
+               <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="47.0" text="Sobrenome:" />
+               <TextField fx:id="textFieldNome" layoutX="79.0" layoutY="8.0" prefHeight="26.0" prefWidth="181.0" promptText="Infome seu nome" />
+               <TextField fx:id="textFieldSobrenome" layoutX="79.0" layoutY="43.0" prefHeight="26.0" prefWidth="182.0" />
+               <Button layoutX="79.0" layoutY="156.0" onAction="#onActionBtOk" prefHeight="26.0" prefWidth="84.0" text="OK">
+                  <font>
+                     <Font name="Calibri Bold" size="14.0" />
+                  </font>
+               </Button>
+               <Label layoutY="81.0" text="Dependentes:" />
+               <TextField fx:id="textFieldDependentes" layoutX="79.0" layoutY="77.0" prefHeight="26.0" prefWidth="182.0" text="0" />
+            </children>
+         </AnchorPane>
+      </VBox>
+   </children>
+</AnchorPane>
