@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="370.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.prjexemplojavafx.HelloController">
+   <children>
+      <AnchorPane prefHeight="371.0" prefWidth="466.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Group layoutX="233.0" layoutY="198.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                   <Button layoutX="105.0" onAction="#onActionBtNovo" prefHeight="27.0" prefWidth="74.0" text="Novo">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="14.0" onAction="#onActionBtOk" prefHeight="27.0" prefWidth="79.0" text="OK">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Group>
+            <GridPane layoutX="10.4" layoutY="24.0" prefHeight="168.0" prefWidth="442.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="14.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.39996337890625" minWidth="10.0" prefWidth="155.8" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="308.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="52.8" minHeight="10.0" prefHeight="52.8" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="22.400000000000006" minHeight="10.0" prefHeight="22.400000000000006" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="21.600012207031256" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="147.0" text="Nome:" textAlignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="143.0" text="Sobrenome:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="154.0" text="Dependentes:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="textFieldNome" prefHeight="26.0" prefWidth="102.0" promptText="Infome seu nome" GridPane.columnIndex="1" />
+                  <TextField fx:id="textFieldSobrenome" prefHeight="26.0" prefWidth="282.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="textFieldDependentes" prefHeight="26.0" prefWidth="164.0" text="3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="150.0" text="Idade:" GridPane.rowIndex="3" />
+                  <Spinner fx:id="spinnerIdade" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="choiceBoxSexo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <CheckBox fx:id="checkBoxCasaPropria" layoutX="142.0" layoutY="220.0" mnemonicParsing="false" text="Casa Própria" />
+            <CheckBox layoutX="243.0" layoutY="220.0" mnemonicParsing="false" text="Veículo" />
+            <CheckBox layoutX="335.0" layoutY="220.0" mnemonicParsing="false" text="Ativo" />
+            <Group layoutX="142.0" layoutY="295.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Brasileira">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroupNacionalidade" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="70.0" mnemonicParsing="false" text="Portuguesa" toggleGroup="$toggleGroupNacionalidade" />
+                  <RadioButton layoutX="163.0" mnemonicParsing="false" text="Espanhola" toggleGroup="$toggleGroupNacionalidade" />
+                  <RadioButton layoutX="243.0" mnemonicParsing="false" text="Outra" />
+                  <TextArea fx:id="textAreaResultado" layoutX="-80.0" layoutY="-91.0" prefHeight="54.0" prefWidth="375.0" />
+               </children>
+            </Group>
+            <Label layoutX="44.0" layoutY="250.0" text="Nacionalidade:" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
