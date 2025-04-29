@@ -37,10 +37,10 @@ public class CorDAO {
     }
 
     public boolean alterar(Cor cor) {
-        String sql = "UPDATE cor SET descricao=? WHERE id=?";
+        String sql = "UPDATE cor SET nome=? WHERE id=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, cor.getDescricao());
+            stmt.setString(1, cor.getNome());
             stmt.setInt(2, cor.getId());
             stmt.execute();
             return true;
@@ -72,7 +72,7 @@ public class CorDAO {
             while (resultado.next()) {
                 Cor cor = new Cor();
                 cor.setId(resultado.getInt("id"));
-                cor.setDescricao(resultado.getString("descricao"));
+                cor.setNome(resultado.getString("nome"));
                 retorno.add(cor);
             }
         } catch (SQLException ex) {
@@ -95,7 +95,7 @@ public class CorDAO {
             ResultSet resultado = stmt.executeQuery();
             if (resultado.next()) {
                 retorno.setId(resultado.getInt("id"));
-                retorno.setDescricao(resultado.getString("descricao"));
+                retorno.setNome(resultado.getString("nome"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CorDAO.class.getName()).log(Level.SEVERE, null, ex);
