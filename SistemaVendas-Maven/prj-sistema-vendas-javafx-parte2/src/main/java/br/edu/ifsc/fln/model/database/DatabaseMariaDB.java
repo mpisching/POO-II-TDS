@@ -6,20 +6,15 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DatabaseMySQL implements Database {
+public class DatabaseMariaDB implements Database {
 
     private Connection connection;
 
     @Override
     public Connection conectar() {
         try {
-            final String DRIVER = "com.mysql.cj.jdbc.Driver";//MySQL 8
-            //final String Driver = "org.mariadb.jdbc.Driver"; //MariaDB
-            //String driver = "com.mysql.jdbc.Driver"; //MySQL 5
-            final String URL = "jdbc:mysql://localhost:3306/db_vendas2?useTimezone=true&serverTimezone=UTC";//MySQL 8
-            //final String URL = "jdbc:mariadb://localhost:3306/db_vendas?useTimezone=true&serverTimezone=UTC";//MySQL 8
-            //String url = "jdbc:mysql://localhost:3306/db_vendas?useTimezone=true&serverTimezone=America/Sao_Paulo";
-            //String url = "jdbc:mysql://localhost:3306/db_vendas";//MySQL 5
+            final String DRIVER = "com.mariadb.jdbc.Driver";
+            final String URL = "jdbc:mariadb://localhost:3306/db_vendas2?useTimezone=true&serverTimezone=UTC";
             final String USER = "root";
             final String PASS = "";
             Class.forName(DRIVER);

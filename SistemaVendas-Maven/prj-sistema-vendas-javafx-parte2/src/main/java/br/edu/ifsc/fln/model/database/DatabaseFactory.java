@@ -6,6 +6,8 @@ public class DatabaseFactory {
             return new DatabasePostgreSQL();
         }else if(nome.equals("mysql")){
             return new DatabaseMySQL();
+        } else if (nome.equals("mariadb")) {
+            return new DatabaseMariaDB();
         }
         return null;
     }

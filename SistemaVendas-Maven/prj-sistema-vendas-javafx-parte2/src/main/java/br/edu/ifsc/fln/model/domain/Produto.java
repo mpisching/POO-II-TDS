@@ -11,7 +11,7 @@ public class Produto implements Serializable {
     private BigDecimal preco;
     
     private Categoria categoria;
-//    private int id_categoria.; ISSO É UM CRIME CONTRA A POO
+//    private int id_categoria;//ISSO É UM CRIME CONTRA A POO
     
     private Estoque estoque; //implementação do conceito de COMPOSIÇÃO - requer que o objeto seja construído pelo seu construtor, ou durante a declaração da variável
     // ou private Estoque estoque = new Estoque(); //como o Estoque é definido pela composição, também não é recomendado o método set para este atributo

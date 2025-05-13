@@ -61,6 +61,7 @@ public class FXMLAnchorPaneCadastroCategoriaController implements Initializable 
     private ObservableList<Categoria> observableListCategorias;
     
     private final Database database = DatabaseFactory.getDatabase("mysql");
+    //private final Database database = DatabaseFactory.getDatabase("mariadb");
     private final Connection connection = database.conectar();
     private final CategoriaDAO categoriaDAO = new CategoriaDAO();
     
