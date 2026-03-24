@@ -1,0 +1,95 @@
+
+.root-pane {
+    -fx-background-color: #0a0a1a;
+}
+
+.name-label {
+    -fx-text-fill: #00ffff;
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.cyan-button {
+    -fx-background-color: #0f0f3d;
+    -fx-text-fill: #00ffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-color: #00ffff55;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+}
+
+.cyan-button:hover {
+    -fx-background-color: #0055ff;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #00ffff;
+}
+
+.cyan-button:pressed {
+    -fx-background-color: #0033cc;
+}
+
+.cyan-button:disabled {
+    -fx-opacity: 0.5;
+}
+
+.download-button {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 15px;
+}
+
+.status-label {
+    -fx-text-fill: #00ffff;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+}
+
+.popup-list {
+    -fx-background-color: #0a0a1a;
+}
+
+.scroll-pane {
+    -fx-background-color: #0a0a1a;
+    -fx-background: #0a0a1a;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #0a0a1a;
+}
+
+.scroll-pane .scroll-bar:vertical .track,
+.scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: #0f0f3d;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb,
+.scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #00aaff;
+    -fx-background-radius: 4px;
+}
+
+.alert-pane {
+    -fx-background-color: #0a0a1a;
+}
+
+.alert-pane .content.label {
+    -fx-text-fill: #00ffff;
+}
+
+.alert-pane .button {
+    -fx-background-color: #0f0f3d;
+    -fx-text-fill: #00ffff;
+    -fx-border-color: #00ffff55;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.alert-pane .button:hover {
+    -fx-background-color: #0055ff;
+    -fx-text-fill: white;
+}
