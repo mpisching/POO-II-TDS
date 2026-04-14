@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.edu.ifsc.fln</groupId>
-    <artifactId>prj-sistema-vendas-javafx-parte1</artifactId>
+    <artifactId>prj-sistema-lavacao-javafx-parte1</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -103,5 +103,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>prj-sistema-vendas-javafx-parte1</name>
+    <name>prj-sistema-lavacao-javafx-parte1</name>
 </project>

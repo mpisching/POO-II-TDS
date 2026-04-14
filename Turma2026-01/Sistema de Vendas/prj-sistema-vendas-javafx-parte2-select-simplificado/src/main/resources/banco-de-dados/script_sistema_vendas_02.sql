@@ -23,7 +23,8 @@ CREATE TABLE produto(
 
 /*TABELA ESTOQUE COM RELACIONAMENTO 1:1 PARA PRODUTO*/
 CREATE TABLE estoque(
-	id_produto INT NOT NULL REFERENCES produto(id),
+    /*id_produto INT NOT NULL REFERENCES produto(id),*/
+    id_produto INT NOT NULL,
     quantidade INT NOT NULL DEFAULT 0,
     qtd_minima INT DEFAULT 0,
     qtd_maxima INT DEFAULT 0,
@@ -69,4 +70,4 @@ UPDATE estoque SET quantidade=300, qtd_minima=50, qtd_maxima=1000, situacao='ATI
 /*INSERT INTO estoque(id_produto, quantidade, qtd_minima, qtd_maxima, situacao) VALUES (1, 20, 2, 100, 'ATIVO');*/
 /* A TENTATIVA DE INSERIR UM ESTOQUE SEM QUE O PRODUTO EXISTA TAMBÉM CAUSARÁ ERRO*/
 /*INSERT INTO estoque(id_produto, quantidade, qtd_minima, qtd_maxima, situacao) VALUES (4, 20, 2, 100, 'ATIVO');*/
-DELETE FROM produto WHERE id = 4;
+DELETE FROM produto WHERE id = 6;

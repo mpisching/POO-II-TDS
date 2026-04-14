@@ -8,7 +8,6 @@ CREATE TABLE cor(
       PRIMARY KEY(id)
 ) engine=InnoDB;
 
-
 INSERT INTO cor(nome) VALUES('AZUL');
 INSERT INTO cor(nome) VALUES('PRETO');
 INSERT INTO cor(nome) VALUES('BRANCO');

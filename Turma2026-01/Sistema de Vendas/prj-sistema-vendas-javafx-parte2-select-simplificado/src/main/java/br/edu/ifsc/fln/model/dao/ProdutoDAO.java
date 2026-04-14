@@ -27,6 +27,7 @@ public class ProdutoDAO {
         final String sql = "INSERT INTO produto(nome, descricao, preco, id_categoria) VALUES(?,?,?,?);";
         final String sqlEstoque = "INSERT INTO estoque(id_produto) (SELECT max(id) FROM produto);";
         try {
+            connection.setAutoCommit(false);
             PreparedStatement stmt = connection.prepareStatement(sql);
             //registra o produto
             stmt.setString(1, produto.getNome());
@@ -37,10 +38,16 @@ public class ProdutoDAO {
             //registra o estoque do produto imediatamente
             stmt = connection.prepareStatement(sqlEstoque);
             stmt.execute();
+            connection.commit();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+            try {
+                connection.rollback();
+            } catch (SQLException ex1) {
+                throw new RuntimeException(ex1);
+            }
+           return false;
         }
     }
 
