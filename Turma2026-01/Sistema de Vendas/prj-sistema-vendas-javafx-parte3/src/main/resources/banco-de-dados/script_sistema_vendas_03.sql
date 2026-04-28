@@ -14,7 +14,7 @@ CREATE TABLE fornecedor(
 ) engine=InnoDB;
 
 CREATE TABLE nacional(
-	id_fornecedor INT NOT NULL REFERENCES fornecedor(id),
+	id_fornecedor INT NOT NULL,
     cnpj VARCHAR(20) NOT NULL,
     CONSTRAINT pk_nacional PRIMARY KEY (id_fornecedor),
     CONSTRAINT fk_nacional_fornecedor FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id) 
@@ -23,7 +23,7 @@ CREATE TABLE nacional(
 ) engine=InnoDB;
 
 CREATE TABLE internacional(
-	id_fornecedor INT NOT NULL REFERENCES fornecedor(id),
+	id_fornecedor INT NOT NULL,
     nif VARCHAR(20) NOT NULL,
     pais VARCHAR(30) NOT NULL,
     CONSTRAINT pk_internacional PRIMARY KEY (id_fornecedor),

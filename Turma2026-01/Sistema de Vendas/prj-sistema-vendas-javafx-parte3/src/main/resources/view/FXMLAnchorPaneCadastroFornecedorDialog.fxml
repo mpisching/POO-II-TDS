@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.controller.FXMLAnchorPaneCadastroFornecedorDialogController">
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.controller.FXMLAnchorPaneCadastroFornecedorDialogController">
    <children>
       <GridPane layoutX="34.0" layoutY="37.0" prefHeight="184.0" prefWidth="374.0">
         <columnConstraints>
@@ -68,7 +68,7 @@
             <TextField fx:id="tfPais" disable="true" text="BRASIL" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <Group fx:id="gbTipo" layoutX="14.0" layoutY="5.0">
+                  <Group fx:id="gbTipo" disable="true" layoutX="14.0" layoutY="5.0">
                      <children>
                         <RadioButton fx:id="rbNacional" mnemonicParsing="false" onAction="#handleRbNacional" selected="true" text="Nacional">
                            <toggleGroup>
