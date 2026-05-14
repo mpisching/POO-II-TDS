@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_02.sql" value="5c44fd9d-468b-4036-bcc1-96177ebac477" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_03.sql" value="5c44fd9d-468b-4036-bcc1-96177ebac477" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_04.1.sql" value="5c44fd9d-468b-4036-bcc1-96177ebac477" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_04.sql" value="5c44fd9d-468b-4036-bcc1-96177ebac477" />
+  </component>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/../projeto_vendas_hibernate_parte_VF2/src/main/resources/banco-de-dados/script_sistema_vendas_01.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/../projeto_vendas_hibernate_parte_VF2/src/main/resources/banco-de-dados/script_sistema_vendas_02.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../projeto_vendas_hibernate_parte_VF2/src/main/resources/banco-de-dados/script_sistema_vendas_03.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../projeto_vendas_hibernate_parte_VF2/src/main/resources/banco-de-dados/script_sistema_vendas_04.1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../projeto_vendas_hibernate_parte_VF2/src/main/resources/banco-de-dados/script_sistema_vendas_04.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_01.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_02.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_03.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_04.1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/banco-de-dados/script_sistema_vendas_04.sql" dialect="MySQL" />
+  </component>
+</project>

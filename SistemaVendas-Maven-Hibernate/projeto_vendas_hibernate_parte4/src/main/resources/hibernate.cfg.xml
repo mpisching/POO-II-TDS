@@ -1,0 +1,22 @@
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_vendas4</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <mapping class="br.edu.ifsc.fln.model.domain.Produto"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.Categoria"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.Cliente"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.Estoque"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.Fornecedor"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.Nacional"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.Internacional"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.Venda"/>
+        <mapping class="br.edu.ifsc.fln.model.domain.ItemDeVenda"/>
+    </session-factory>
+</hibernate-configuration>
