@@ -5,15 +5,16 @@
  */
 package br.edu.ifsc.fln.controller;
 
-import br.edu.ifsc.fln.exception.DAOException;
-import br.edu.ifsc.fln.model.dao.CategoriaDAO;
 import br.edu.ifsc.fln.model.dao.FornecedorDAO;
 import br.edu.ifsc.fln.model.database.Database;
 import br.edu.ifsc.fln.model.database.DatabaseFactory;
 import br.edu.ifsc.fln.model.domain.Categoria;
 import br.edu.ifsc.fln.model.domain.Fornecedor;
 import br.edu.ifsc.fln.model.domain.Produto;
+import br.edu.ifsc.fln.serviceclient.HttpClientCategoriaUtil;
 import br.edu.ifsc.fln.utils.AlertDialog;
+
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Connection;
@@ -65,7 +66,6 @@ public class FXMLAnchorPaneCadastroProdutoDialogController implements Initializa
     //atributos para manipulação de banco de dados
     private final Database database = DatabaseFactory.getDatabase("mysql");
     private final Connection connection = database.conectar();
-    private final CategoriaDAO categoriaDAO = new CategoriaDAO();
     private final FornecedorDAO fornecedorDAO = new FornecedorDAO();
     
     private Stage dialogStage;
@@ -77,7 +77,6 @@ public class FXMLAnchorPaneCadastroProdutoDialogController implements Initializa
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        categoriaDAO.setConnection(connection);
         carregarComboBoxCategorias();
         
         fornecedorDAO.setConnection(connection);
@@ -96,27 +95,13 @@ public class FXMLAnchorPaneCadastroProdutoDialogController implements Initializa
         });
     }
     
-//This works fine too:    
-//root.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
-//    focusState(newValue);
-//});
-//
-//private void focusState(boolean value) {
-//    if (value) {
-//        System.out.println("Focus Gained");
-//    }
-//    else {
-//        System.out.println("Focus Lost");
-//    }
-//} 
-    
     private List<Categoria> listaCategorias;
     private ObservableList<Categoria> observableListCategorias; 
     
     public void carregarComboBoxCategorias() {
         try {
-            listaCategorias = categoriaDAO.listar();
-        } catch (DAOException ex) {
+            listaCategorias = HttpClientCategoriaUtil.getCategorias();
+        } catch (IOException ex) {
             AlertDialog.exceptionMessage(ex);
         }
         

@@ -4,16 +4,11 @@
  */
 package br.edu.ifsc.fln.controller;
 
-import br.edu.ifsc.fln.exception.DAOException;
-import br.edu.ifsc.fln.model.dao.CategoriaDAO;
-import br.edu.ifsc.fln.model.database.Database;
-import br.edu.ifsc.fln.model.database.DatabaseFactory;
 import br.edu.ifsc.fln.model.domain.Categoria;
 import br.edu.ifsc.fln.serviceclient.HttpClientCategoriaUtil;
 import br.edu.ifsc.fln.utils.AlertDialog;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -63,16 +58,11 @@ public class FXMLAnchorPaneCadastroCategoriaController implements Initializable 
     private List<Categoria> listaCategorias;
     private ObservableList<Categoria> observableListCategorias;
     
-    private final Database database = DatabaseFactory.getDatabase("mysql");
-    private final Connection connection = database.conectar();
-    private final CategoriaDAO categoriaDAO = new CategoriaDAO();
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        categoriaDAO.setConnection(connection);
         carregarTableViewCategoria();
         
         tableViewCategorias.getSelectionModel().selectedItemProperty().addListener(

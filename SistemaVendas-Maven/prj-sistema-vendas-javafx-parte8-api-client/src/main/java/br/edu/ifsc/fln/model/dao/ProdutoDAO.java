@@ -5,6 +5,9 @@ import br.edu.ifsc.fln.model.domain.Categoria;
 import br.edu.ifsc.fln.model.domain.ESituacao;
 import br.edu.ifsc.fln.model.domain.Fornecedor;
 import br.edu.ifsc.fln.model.domain.Produto;
+import br.edu.ifsc.fln.serviceclient.HttpClientCategoriaUtil;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -186,11 +189,9 @@ public class ProdutoDAO{
         
         //dados da categoria do produto
         categoria.setId(rs.getInt("id_categoria"));
-        CategoriaDAO categoriaDAO = new CategoriaDAO();
-        categoriaDAO.setConnection(connection);
         try {
-            categoria = categoriaDAO.buscar(categoria);
-        } catch (DAOException ex) {
+            categoria = HttpClientCategoriaUtil.getCategoriaById(categoria.getId());
+        } catch (IOException ex) {
             throw new DAOException("A categoria do produto não foi encontrada.", ex);
         }
         produto.setCategoria(categoria);
