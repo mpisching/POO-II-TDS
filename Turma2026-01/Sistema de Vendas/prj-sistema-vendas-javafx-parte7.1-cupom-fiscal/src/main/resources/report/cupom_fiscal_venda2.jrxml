@@ -1,0 +1,238 @@
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6-5d2a603fdc6b3db8f842a83383e594f41891534d  -->
+<jasperReport name="cupom_fiscal_venda2" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Adapter"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50.0" bold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18.0" bold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14.0" bold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle mode="Opaque" backcolor="#EEEFF0">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle backcolor="#D8D8D8">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<dataset name="tableDataset" uuid="f13e6d36-5148-4ecc-bbe3-3035def80980">
+		<query language="sql"><![CDATA[]]></query>
+	</dataset>
+	<parameter name="venda_id" class="java.lang.Integer"/>
+	<query language="SQL"><![CDATA[SELECT
+    v.id AS venda_id,
+    v.data AS venda_data,
+    v.empresa AS venda_empresa,
+    v.total AS venda_total,
+    v.taxa_desconto AS venda_desconto,
+    v.situacao AS venda_situacao,
+    c.nome AS nome_cliente,
+    p.nome AS nome_produto,
+    iv.valor AS valor_item,
+    iv.quantidade AS quantidade_item
+FROM venda v
+         INNER JOIN cliente c ON v.id_cliente = c.id
+         INNER JOIN item_de_venda iv ON v.id = iv.id_venda
+         INNER JOIN produto p ON iv.id_produto = p.id
+WHERE v.id = $P{venda_id}]]></query>
+	<field name="venda_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="venda_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
+	</field>
+	<field name="venda_data" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="data"/>
+		<property name="com.jaspersoft.studio.field.label" value="venda_data"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
+	</field>
+	<field name="venda_empresa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="empresa"/>
+		<property name="com.jaspersoft.studio.field.label" value="venda_empresa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
+	</field>
+	<field name="venda_total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="venda_total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
+	</field>
+	<field name="venda_desconto" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="taxa_desconto"/>
+		<property name="com.jaspersoft.studio.field.label" value="venda_desconto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
+	</field>
+	<field name="venda_situacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="situacao"/>
+		<property name="com.jaspersoft.studio.field.label" value="venda_situacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="venda"/>
+	</field>
+	<field name="nome_cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="nome_produto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="valor_item" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="valor"/>
+		<property name="com.jaspersoft.studio.field.label" value="valor_item"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_de_venda"/>
+	</field>
+	<field name="quantidade_item" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantidade_item"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_de_venda"/>
+	</field>
+	<title height="111" splitType="Stretch">
+		<element kind="staticText" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a" x="0" y="83" width="84" height="25" fontSize="16.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Cliente:]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="line" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246" x="0" y="80" width="556" height="1">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8" x="415" y="1" width="50" height="20" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Date:]]></text>
+			<box rightPadding="4"/>
+		</element>
+		<element kind="image" uuid="94883631-a913-43e2-b182-ab8d77d0181e" x="0" y="0" width="84" height="70" hImageAlign="Center">
+			<expression><![CDATA["/home/marcos-pisching/Documentos/POO-II-TDS/SistemaVendas-Maven/prj-sistema-vendas-javafx-parte7.1-cupom-fiscal/src/main/resources/icon/IFSC_logo_vertical.png"]]></expression>
+		</element>
+		<element kind="staticText" uuid="0b3f9342-da78-4cfa-9fc5-2301c4749678" x="415" y="21" width="50" height="20" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Pedido #:]]></text>
+			<box rightPadding="4"/>
+		</element>
+		<element kind="staticText" uuid="e622555d-198b-4ccd-a4a1-c59c53304058" x="95" y="0" width="315" height="25" fontSize="19.0" bold="true">
+			<text><![CDATA[Your company name]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="b8cc42fd-b569-497d-834d-7e854040ad18" x="95" y="55" width="315" height="15" hTextAlign="Center">
+			<text><![CDATA[Fone/Whats: (48) 3211-6025]]></text>
+		</element>
+		<element kind="staticText" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde" x="95" y="25" width="315" height="15" hTextAlign="Center">
+			<text><![CDATA[Av. Mauro Ramos, 950]]></text>
+		</element>
+		<element kind="staticText" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e" x="95" y="40" width="315" height="15" hTextAlign="Center">
+			<text><![CDATA[Florianópolis, SC, 88020-300]]></text>
+		</element>
+		<element kind="textField" uuid="e804ad57-92bd-49a1-b532-01d49a7480ec" x="95" y="0" width="315" height="25" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$F{venda_empresa}]]></expression>
+		</element>
+		<element kind="textField" uuid="d70c6bdc-3919-4c2a-921f-a3d216413f0e" x="465" y="22" width="84" height="19" vTextAlign="Middle">
+			<expression><![CDATA[$F{venda_id}]]></expression>
+		</element>
+		<element kind="textField" uuid="7abe497e-d210-45a4-91c7-cbd810b6c10d" x="466" y="1" width="83" height="20" hTextAlign="Left" vTextAlign="Middle">
+			<expression><![CDATA[$F{venda_data}]]></expression>
+		</element>
+		<element kind="textField" uuid="6e5a3a15-d963-4ad5-8ea9-6e9ad1165781" x="95" y="83" width="454" height="25" fontSize="16.0" vTextAlign="Middle">
+			<expression><![CDATA[$F{nome_cliente}]]></expression>
+		</element>
+	</title>
+	<columnHeader height="33">
+		<element kind="staticText" uuid="fff2d45e-03a8-42bc-bdaa-a372593c3d6d" x="10" y="0" width="210" height="29" bold="true" vTextAlign="Middle">
+			<text><![CDATA[Produto]]></text>
+		</element>
+		<element kind="staticText" uuid="1725f2ca-d13a-4ad8-8f30-683f59575661" x="226" y="0" width="107" height="29" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Quantidade]]></text>
+		</element>
+		<element kind="staticText" uuid="95c5ebb3-c895-4170-a699-2535c7704286" x="340" y="0" width="90" height="29" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Vlr. Unitário]]></text>
+		</element>
+		<element kind="staticText" uuid="be090caf-47f6-4cd8-a1e8-217f4e02624f" x="440" y="0" width="110" height="29" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Subtotal]]></text>
+		</element>
+		<element kind="frame" uuid="e79e787b-b6ed-4322-8414-a28b6ad6ba96" x="0" y="0" width="556" height="30">
+			<box>
+				<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="22">
+			<element kind="textField" uuid="d2b67e4c-8754-4977-8f7f-0d4072b2e2c8" x="8" y="0" width="212" height="22" vTextAlign="Middle">
+				<expression><![CDATA[$F{nome_produto}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5de51584-c8b1-4c71-a787-7fbf4529f226"/>
+			</element>
+			<element kind="textField" uuid="7a27c33a-f68e-4431-b997-171bcbc7818e" x="224" y="0" width="109" height="22" hTextAlign="Right" vTextAlign="Middle">
+				<expression><![CDATA[$F{quantidade_item}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc66fb6b-03fd-4dc9-bf0e-a6d5b4abd70b"/>
+			</element>
+			<element kind="textField" uuid="eb67115a-8fff-4f82-a091-1b68a7c84989" x="337" y="0" width="93" height="22" hTextAlign="Right" vTextAlign="Middle">
+				<expression><![CDATA[$F{valor_item}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b6a1a212-2c18-444d-9f09-998cbed0b028"/>
+			</element>
+			<element kind="textField" uuid="bdfb3fff-e84f-46ef-9c24-a42018653e51" x="439" y="0" width="110" height="22" hTextAlign="Right" vTextAlign="Middle">
+				<expression><![CDATA[$F{valor_item}.multiply(new java.math.BigDecimal($F{quantidade_item}))]]></expression>
+			</element>
+		</band>
+	</detail>
+	<lastPageFooter height="82">
+		<element kind="staticText" uuid="1a0d7088-5af7-4865-8be1-41ec5f51fb36" positionType="Float" x="0" y="3" width="557" height="40">
+			<text><![CDATA[De acordo com o código do consumidor aceitamos trocas até 30 dias após a entrega dos produtos, desde que sejam mantidas as embalagens originais.]]></text>
+			<box>
+				<topPen lineWidth="1.1" lineStyle="Dashed"/>
+				<leftPen lineWidth="1.1" lineStyle="Dashed"/>
+				<bottomPen lineWidth="1.1" lineStyle="Dashed"/>
+				<rightPen lineWidth="1.1" lineStyle="Dashed"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f" positionType="Float" mode="Opaque" x="0" y="46" width="556" height="30" backcolor="#E6E8E9" fontName="Serif" fontSize="9.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Obrigado por confiar e fazer as suas compras em nossa rede!!!
+Será um prazer recebê-lo novamente!]]></text>
+		</element>
+	</lastPageFooter>
+	<summary height="60">
+		<element kind="textField" uuid="7cf5d548-ad54-4a78-99bf-ef974c2d9095" x="429" y="32" width="127" height="26" fontSize="15.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{venda_total}]]></expression>
+		</element>
+		<element kind="staticText" uuid="0511008c-5808-4dfa-a0e6-d995be36cdee" x="320" y="32" width="100" height="26" fontSize="15.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Total:]]></text>
+		</element>
+		<element kind="staticText" uuid="fb1a27d4-0f78-42ba-bbe8-e9b989552d99" x="320" y="2" width="100" height="26" fontSize="15.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Desconto:]]></text>
+		</element>
+		<element kind="textField" uuid="a2723052-1249-45df-b97f-6ea475858c30" x="429" y="2" width="127" height="26" fontSize="15.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{venda_desconto}]]></expression>
+		</element>
+	</summary>
+</jasperReport>
