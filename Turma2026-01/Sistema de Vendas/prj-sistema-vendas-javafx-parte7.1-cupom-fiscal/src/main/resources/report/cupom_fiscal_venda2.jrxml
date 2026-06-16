@@ -1,4 +1,4 @@
-<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6-5d2a603fdc6b3db8f842a83383e594f41891534d  -->
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
 <jasperReport name="cupom_fiscal_venda2" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Adapter"/>
@@ -135,16 +135,11 @@ WHERE v.id = $P{venda_id}]]></query>
 			<box rightPadding="4"/>
 		</element>
 		<element kind="image" uuid="94883631-a913-43e2-b182-ab8d77d0181e" x="0" y="0" width="84" height="70" hImageAlign="Center">
-			<expression><![CDATA["/home/marcos-pisching/Documentos/POO-II-TDS/SistemaVendas-Maven/prj-sistema-vendas-javafx-parte7.1-cupom-fiscal/src/main/resources/icon/IFSC_logo_vertical.png"]]></expression>
+			<expression><![CDATA["C:/Users/Aluno/Documents/POO-II-TDS/Turma2026-01/Sistema de Vendas/prj-sistema-vendas-javafx-parte7.1-cupom-fiscal/src/main/resources/icon/IFSC_logo_vertical.png"]]></expression>
 		</element>
 		<element kind="staticText" uuid="0b3f9342-da78-4cfa-9fc5-2301c4749678" x="415" y="21" width="50" height="20" hTextAlign="Right" vTextAlign="Middle">
 			<text><![CDATA[Pedido #:]]></text>
 			<box rightPadding="4"/>
-		</element>
-		<element kind="staticText" uuid="e622555d-198b-4ccd-a4a1-c59c53304058" x="95" y="0" width="315" height="25" fontSize="19.0" bold="true">
-			<text><![CDATA[Your company name]]></text>
-			<property name="local_mesure_unitheight" value="pixel"/>
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 		</element>
 		<element kind="staticText" uuid="b8cc42fd-b569-497d-834d-7e854040ad18" x="95" y="55" width="315" height="15" hTextAlign="Center">
 			<text><![CDATA[Fone/Whats: (48) 3211-6025]]></text>
