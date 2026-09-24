@@ -54,6 +54,7 @@
 		<query language="sql"><![CDATA[]]></query>
 	</dataset>
 	<parameter name="venda_id" class="java.lang.Integer"/>
+	<parameter name="LOGO_PARAM" class="java.io.InputStream"/>
 	<query language="SQL"><![CDATA[SELECT
     v.id AS venda_id,
     v.data AS venda_data,
@@ -135,7 +136,7 @@ WHERE v.id = $P{venda_id}]]></query>
 			<box rightPadding="4"/>
 		</element>
 		<element kind="image" uuid="94883631-a913-43e2-b182-ab8d77d0181e" x="0" y="0" width="84" height="70" hImageAlign="Center">
-			<expression><![CDATA["/home/marcos-pisching/Documentos/POO-II-TDS/SistemaVendas-Maven/prj-sistema-vendas-javafx-parte7.1-cupom-fiscal/src/main/resources/icon/IFSC_logo_vertical.png"]]></expression>
+			<expression><![CDATA[$P{LOGO_PARAM}]]></expression>
 		</element>
 		<element kind="staticText" uuid="0b3f9342-da78-4cfa-9fc5-2301c4749678" x="415" y="21" width="50" height="20" hTextAlign="Right" vTextAlign="Middle">
 			<text><![CDATA[Pedido #:]]></text>
